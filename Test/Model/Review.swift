@@ -1,9 +1,19 @@
 /// Модель отзыва.
 struct Review: Decodable {
-
-    /// Текст отзыва.
+    
+    let firstName: String
+    let lastName: String
+    let rating: Int
     let text: String
-    /// Время создания отзыва.
     let created: String
-
+    let avatarURL: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case firstName = "first_name"
+        case lastName = "last_name"
+        case rating
+        case text
+        case created
+        case avatarURL = "avatar_url"
+    }
 }
