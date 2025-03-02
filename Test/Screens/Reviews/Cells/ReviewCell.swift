@@ -18,7 +18,7 @@ struct ReviewCellConfig {
     /// Время создания отзыва.
     let created: NSAttributedString
     
-    let avatar: UIImage
+    let avatarURL: String?
     let firstName: String
     let lastName: String
     let rating: Int
@@ -110,7 +110,12 @@ final class ReviewCell: UITableViewCell {
 
 private extension ReviewCell {
     func update(with config: ReviewCellConfig) {
-        avatarImageView.image = config.avatar
+        if let avatar = ImageLoader.shared.image(for: config.avatarURL) {
+            avatarImageView.image = avatar
+        } else {
+            avatarImageView.image = UIImage(named: "avatar")
+        }
+        
         usernameLabel.text = "\(config.firstName) \(config.lastName)"
         reviewTextLabel.attributedText = config.reviewText
         reviewTextLabel.numberOfLines = config.maxLines
@@ -122,6 +127,14 @@ private extension ReviewCell {
         showMoreButton.isHidden = !config.shouldShowShowMoreButton
         showMoreButton.setAttributedTitle(ReviewCellConfig.showMoreText, for: .normal)
         showMoreButton.sizeToFit()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(imageLoaded(_:)), name: .imageLoaded, object: nil)
+    }
+    
+    @objc private func imageLoaded(_ notification: Notification) {
+        DispatchQueue.main.async {
+            self.avatarImageView.image = ImageLoader.shared.image(for: self.config?.avatarURL)
+        }
     }
 }
 

@@ -6,6 +6,7 @@ struct Review: Decodable {
     let rating: Int
     let text: String
     let created: String
+    let avatarURL: String?
     
     enum CodingKeys: String, CodingKey {
         case firstName = "first_name"
@@ -13,5 +14,6 @@ struct Review: Decodable {
         case rating
         case text
         case created
+        case avatarURL = "avatar_url"
     }
 }

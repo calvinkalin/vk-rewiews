@@ -111,10 +111,12 @@ private extension ReviewsViewModel {
     func makeReviewItem(_ review: Review) -> ReviewItem {
         let reviewText = review.text.attributed(font: .text)
         let created = review.created.attributed(font: .created, color: .created)
+        let avatar = ImageLoader.shared.image(for: review.avatarURL) ?? UIImage(named: "avatar")!
+
         let item = ReviewItem(
             reviewText: reviewText,
             created: created,
-            avatar: UIImage(named: "avatar") ?? UIImage(),
+            avatarURL: review.avatarURL,
             firstName: review.firstName,
             lastName: review.lastName,
             rating: review.rating,

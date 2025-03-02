@@ -6,49 +6,56 @@
             "last_name": "Петров",
             "rating": 5,
             "text": "Кроссовки хорошие. Удобные. Как по мне сшиты.",
-            "created": "1 час назад"
+            "created": "1 час назад",
+            "avatar_url": "https://sun9-73.userapi.com/impg/zWy_RxYOl3YLtweYmpwVsZZCUJFyVXhx9GGhbQ/v11taIR6uao.jpg?size=640x640&quality=95&sign=2a2217b685a58b1a399cfef80133370d&type=album"
         },
         {
             "first_name": "Екатерина",
             "last_name": "Иванова",
             "rating": 3,
             "text": "Скользские ужасно.",
-            "created": "12 минут назад"
+            "created": "12 минут назад",
+            "avatar_url": ""
         },
         {
             "first_name": "Евгения",
             "last_name": "Петрова",
             "rating": 4,
             "text": "Прошла по снегу 30 метров, 5 раз упала. Спасибо мужу, поддерживал. Возврат, к сожалению.",
-            "created": "35 минут назад"
+            "created": "35 минут назад",
+            "avatar_url": "https://sun9-73.userapi.com/impg/zWy_RxYOl3YLtweYmpwVsZZCUJFyVXhx9GGhbQ/v11taIR6uao.jpg?size=640x640&quality=95&sign=2a2217b685a58b1a399cfef80133370d&type=album"
         },
         {
             "first_name": "Илья",
             "last_name": "Петров",
             "rating": 2,
             "text": "Понравилось отношение - несмотря на то, что заказ был выполнен не идеально, продавец был очень любезен и шёл... Прошла по снегу 30 метров, 5 раз упала. Спасибо мужу, поддерживал. Возврат, к сожалению.",
-            "created": "минуту назад"
+            "created": "минуту назад",
+            "avatar_url": "https://sun9-42.userapi.com/impg/wNUDrMEwCrWR0PkC863MtHyUgVPeEbAbawPz1A/FEJ6EwS9msI.jpg?size=640x640&quality=95&sign=46e2ba01a324ca502e9ea716028dd6f5&type=album"
         },
         {
             "first_name": "Никита",
             "last_name": "Иванов",
             "rating": 5,
             "text": "Отлично выглядят, хоть и скользковатые...",
-            "created": "только что"
+            "created": "только что",
+            "avatar_url": "https://sun9-73.userapi.com/impg/zWy_RxYOl3YLtweYmpwVsZZCUJFyVXhx9GGhbQ/v11taIR6uao.jpg?size=640x640&quality=95&sign=2a2217b685a58b1a399cfef80133370d&type=album"
         },
         {
             "first_name": "Олег",
             "last_name": "Николаев",
             "rating": 1,
             "text": "Ребёнок жалуется, что очень скользские. Пока шла до школы...",
-            "created": "15 минут назад"
+            "created": "15 минут назад",
+            "avatar_url": "https://sun9-42.userapi.com/impg/wNUDrMEwCrWR0PkC863MtHyUgVPeEbAbawPz1A/FEJ6EwS9msI.jpg?size=640x640&quality=95&sign=46e2ba01a324ca502e9ea716028dd6f5&type=album"
         },
         {
             "first_name": "Николай",
             "last_name": "Петров",
             "rating": 2,
             "text": "",
-            "created": "вчера в 12:39"
+            "created": "вчера в 12:39",
+            "avatar_url": "https://sun9-73.userapi.com/impg/zWy_RxYOl3YLtweYmpwVsZZCUJFyVXhx9GGhbQ/v11taIR6uao.jpg?size=640x640&quality=95&sign=2a2217b685a58b1a399cfef80133370d&type=album"
         },
 
 
@@ -57,100 +64,112 @@
             "last_name": "Петров",
             "rating": 5,
             "text": "Кроссовки хорошие. Удобные. Как по мне сшиты.",
-            "created": "1 час назад"
+            "created": "1 час назад",
+            "avatar_url": "https://sun9-42.userapi.com/impg/wNUDrMEwCrWR0PkC863MtHyUgVPeEbAbawPz1A/FEJ6EwS9msI.jpg?size=640x640&quality=95&sign=46e2ba01a324ca502e9ea716028dd6f5&type=album"
         },
         {
             "first_name": "Екатерина",
             "last_name": "Иванова",
             "rating": 3,
             "text": "Скользские ужасно.",
-            "created": "12 минут назад"
+            "created": "12 минут назад",
+            "avatar_url": "https://sun9-73.userapi.com/impg/zWy_RxYOl3YLtweYmpwVsZZCUJFyVXhx9GGhbQ/v11taIR6uao.jpg?size=640x640&quality=95&sign=2a2217b685a58b1a399cfef80133370d&type=album"
         },
         {
             "first_name": "Евгения",
             "last_name": "Петрова",
             "rating": 4,
             "text": "Прошла по снегу 30 метров, 5 раз упала. Спасибо мужу, поддерживал. Возврат, к сожалению.",
-            "created": "35 минут назад"
+            "created": "35 минут назад",
+            "avatar_url": "https://sun9-42.userapi.com/impg/wNUDrMEwCrWR0PkC863MtHyUgVPeEbAbawPz1A/FEJ6EwS9msI.jpg?size=640x640&quality=95&sign=46e2ba01a324ca502e9ea716028dd6f5&type=album"
         },
         {
             "first_name": "Илья",
             "last_name": "Петров",
             "rating": 2,
             "text": "Понравилось отношение - несмотря на то, что заказ был выполнен не идеально, продавец был очень любезен и шёл... Прошла по снегу 30 метров, 5 раз упала. Спасибо мужу, поддерживал. Возврат, к сожалению.",
-            "created": "минуту назад"
+            "created": "минуту назад",
+            "avatar_url": "https://sun9-73.userapi.com/impg/zWy_RxYOl3YLtweYmpwVsZZCUJFyVXhx9GGhbQ/v11taIR6uao.jpg?size=640x640&quality=95&sign=2a2217b685a58b1a399cfef80133370d&type=album"
         },
         {
             "first_name": "Никита",
             "last_name": "Иванов",
             "rating": 5,
             "text": "Отлично выглядят, хоть и скользковатые...",
-            "created": "только что"
+            "created": "только что",
+            "avatar_url": ""
         },
         {
             "first_name": "Олег",
             "last_name": "Николаев",
             "rating": 1,
             "text": "Ребёнок жалуется, что очень скользские. Пока шла до школы...",
-            "created": "15 минут назад"
+            "created": "15 минут назад",
+            "avatar_url": "https://sun9-73.userapi.com/impg/zWy_RxYOl3YLtweYmpwVsZZCUJFyVXhx9GGhbQ/v11taIR6uao.jpg?size=640x640&quality=95&sign=2a2217b685a58b1a399cfef80133370d&type=album"
         },
         {
             "first_name": "Николай",
             "last_name": "Петров",
             "rating": 2,
             "text": "",
-            "created": "вчера в 12:39"
+            "created": "вчера в 12:39",
+            "avatar_url": "https://sun9-42.userapi.com/impg/wNUDrMEwCrWR0PkC863MtHyUgVPeEbAbawPz1A/FEJ6EwS9msI.jpg?size=640x640&quality=95&sign=46e2ba01a324ca502e9ea716028dd6f5&type=album"
         },
-
-
         {
             "first_name": "Иван",
             "last_name": "Петров",
             "rating": 5,
             "text": "Кроссовки хорошие. Удобные. Как по мне сшиты.",
-            "created": "1 час назад"
+            "created": "1 час назад",
+            "avatar_url": "https://sun9-73.userapi.com/impg/zWy_RxYOl3YLtweYmpwVsZZCUJFyVXhx9GGhbQ/v11taIR6uao.jpg?size=640x640&quality=95&sign=2a2217b685a58b1a399cfef80133370d&type=album"
         },
         {
             "first_name": "Екатерина",
             "last_name": "Иванова",
             "rating": 3,
             "text": "Скользские ужасно.",
-            "created": "12 минут назад"
+            "created": "12 минут назад",
+            "avatar_url": "https://sun9-42.userapi.com/impg/wNUDrMEwCrWR0PkC863MtHyUgVPeEbAbawPz1A/FEJ6EwS9msI.jpg?size=640x640&quality=95&sign=46e2ba01a324ca502e9ea716028dd6f5&type=album"
         },
         {
             "first_name": "Евгения",
             "last_name": "Петрова",
             "rating": 4,
             "text": "Прошла по снегу 30 метров, 5 раз упала. Спасибо мужу, поддерживал. Возврат, к сожалению.",
-            "created": "35 минут назад"
+            "created": "35 минут назад",
+            "avatar_url": "https://sun9-73.userapi.com/impg/zWy_RxYOl3YLtweYmpwVsZZCUJFyVXhx9GGhbQ/v11taIR6uao.jpg?size=640x640&quality=95&sign=2a2217b685a58b1a399cfef80133370d&type=album"
         },
         {
             "first_name": "Илья",
             "last_name": "Петров",
             "rating": 2,
             "text": "Понравилось отношение - несмотря на то, что заказ был выполнен не идеально, продавец был очень любезен и шёл... Прошла по снегу 30 метров, 5 раз упала. Спасибо мужу, поддерживал. Возврат, к сожалению.",
-            "created": "минуту назад"
+            "created": "минуту назад",
+            "avatar_url": "https://sun9-42.userapi.com/impg/wNUDrMEwCrWR0PkC863MtHyUgVPeEbAbawPz1A/FEJ6EwS9msI.jpg?size=640x640&quality=95&sign=46e2ba01a324ca502e9ea716028dd6f5&type=album"
         },
         {
             "first_name": "Никита",
             "last_name": "Иванов",
             "rating": 5,
             "text": "Отлично выглядят, хоть и скользковатые...",
-            "created": "только что"
+            "created": "только что",
+            "avatar_url": "https://sun9-73.userapi.com/impg/zWy_RxYOl3YLtweYmpwVsZZCUJFyVXhx9GGhbQ/v11taIR6uao.jpg?size=640x640&quality=95&sign=2a2217b685a58b1a399cfef80133370d&type=album"
         },
         {
             "first_name": "Олег",
             "last_name": "Николаев",
             "rating": 1,
             "text": "Ребёнок жалуется, что очень скользские. Пока шла до школы...",
-            "created": "15 минут назад"
+            "created": "15 минут назад",
+            "avatar_url": "https://sun9-42.userapi.com/impg/wNUDrMEwCrWR0PkC863MtHyUgVPeEbAbawPz1A/FEJ6EwS9msI.jpg?size=640x640&quality=95&sign=46e2ba01a324ca502e9ea716028dd6f5&type=album"
         },
         {
             "first_name": "Николай",
             "last_name": "Петров",
             "rating": 2,
             "text": "",
-            "created": "вчера в 12:39"
+            "created": "вчера в 12:39",
+            "avatar_url": "https://sun9-73.userapi.com/impg/zWy_RxYOl3YLtweYmpwVsZZCUJFyVXhx9GGhbQ/v11taIR6uao.jpg?size=640x640&quality=95&sign=2a2217b685a58b1a399cfef80133370d&type=album"
         },
     ]
 }
