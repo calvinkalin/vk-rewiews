@@ -5,6 +5,7 @@ final class ReviewsViewModel: NSObject {
     
     /// Замыкание, вызываемое при изменении `state`.
     var onStateChange: ((State) -> Void)?
+    var onRefreshEnd: (() -> Void)?
     
     private var state: State
     private let reviewsProvider: ReviewsProvider
@@ -35,10 +36,12 @@ extension ReviewsViewModel {
     func getReviews() {
         guard state.shouldLoad else { return }
         state.shouldLoad = false
-        reviewsProvider.getReviews(offset: state.offset, completion: gotReviews)
+        reviewsProvider.getReviews(offset: state.offset) { [weak self] result in
+            self?.gotReviews(result)
+        }
         print("Загрузка отзывов с offset: \(state.offset)")
     }
-
+    
     
 }
 
@@ -78,8 +81,10 @@ private extension ReviewsViewModel {
             print("Ошибка загрузки отзывов: \(error)")
         }
         onStateChange?(state)
+        
+        onRefreshEnd?()
     }
-
+    
     /// Метод, вызываемый при нажатии на кнопку "Показать полностью...".
     /// Снимает ограничение на количество строк текста отзыва (раскрывает текст).
     func showMoreReview(with id: UUID) {
