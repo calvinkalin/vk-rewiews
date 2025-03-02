@@ -27,6 +27,7 @@
 		21ED1F602D69C85E0012D6F6 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21ED1F5F2D69C85E0012D6F6 /* RootViewController.swift */; };
 		21ED1F622D69CBCD0012D6F6 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21ED1F612D69CBCD0012D6F6 /* RootView.swift */; };
 		21ED1F652D69D0340012D6F6 /* ReviewsScreenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21ED1F642D69D0340012D6F6 /* ReviewsScreenFactory.swift */; };
+		268708572D74E722001DA099 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268708562D74E722001DA099 /* ImageLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		21ED1F5F2D69C85E0012D6F6 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		21ED1F612D69CBCD0012D6F6 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		21ED1F642D69D0340012D6F6 /* ReviewsScreenFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsScreenFactory.swift; sourceTree = "<group>"; };
+		268708562D74E722001DA099 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 		21B82E2C2D47B0640085DAA2 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				268708552D74E70D001DA099 /* Helpers */,
 				21B82E2B2D47B0640085DAA2 /* AppDelegate.swift */,
 				21B82E2A2D47B0640085DAA2 /* Screens */,
 				2166686D2D48DEBF009AAA76 /* Protocols */,
@@ -185,6 +188,14 @@
 				21ED1F612D69CBCD0012D6F6 /* RootView.swift */,
 			);
 			path = Root;
+			sourceTree = "<group>";
+		};
+		268708552D74E70D001DA099 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				268708562D74E722001DA099 /* ImageLoader.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,6 +280,7 @@
 				21B82E362D47B0D80085DAA2 /* ReviewsProvider.swift in Sources */,
 				21ED1F602D69C85E0012D6F6 /* RootViewController.swift in Sources */,
 				21B82E342D47B0AA0085DAA2 /* ReviewsViewModel.swift in Sources */,
+				268708572D74E722001DA099 /* ImageLoader.swift in Sources */,
 				21B8416B2D47BFA10085DAA2 /* Reviews.swift in Sources */,
 				21B82E302D47B0640085DAA2 /* ReviewsViewController.swift in Sources */,
 				2166A0F42D4A5B25009AAA76 /* ReviewsView.swift in Sources */,

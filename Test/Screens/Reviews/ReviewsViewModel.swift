@@ -5,6 +5,8 @@ final class ReviewsViewModel: NSObject {
     
     /// Замыкание, вызываемое при изменении `state`.
     var onStateChange: ((State) -> Void)?
+    var onRefreshEnd: (() -> Void)?
+    var onLoadingStateChange: ((Bool) -> Void)?
     
     private var state: State
     private let reviewsProvider: ReviewsProvider
@@ -35,10 +37,13 @@ extension ReviewsViewModel {
     func getReviews() {
         guard state.shouldLoad else { return }
         state.shouldLoad = false
-        reviewsProvider.getReviews(offset: state.offset, completion: gotReviews)
+        onLoadingStateChange?(true)
+        reviewsProvider.getReviews(offset: state.offset) { [weak self] result in
+            self?.gotReviews(result)
+        }
         print("Загрузка отзывов с offset: \(state.offset)")
     }
-
+    
     
 }
 
@@ -48,6 +53,7 @@ private extension ReviewsViewModel {
     
     /// Метод обработки получения отзывов.
     func gotReviews(_ result: ReviewsProvider.GetReviewsResult) {
+        defer { onLoadingStateChange?(false) }
         do {
             let data = try result.get()
             let reviews = try decoder.decode(Reviews.self, from: data)
@@ -78,8 +84,10 @@ private extension ReviewsViewModel {
             print("Ошибка загрузки отзывов: \(error)")
         }
         onStateChange?(state)
+        
+        onRefreshEnd?()
     }
-
+    
     /// Метод, вызываемый при нажатии на кнопку "Показать полностью...".
     /// Снимает ограничение на количество строк текста отзыва (раскрывает текст).
     func showMoreReview(with id: UUID) {
@@ -103,10 +111,12 @@ private extension ReviewsViewModel {
     func makeReviewItem(_ review: Review) -> ReviewItem {
         let reviewText = review.text.attributed(font: .text)
         let created = review.created.attributed(font: .created, color: .created)
+        let avatar = ImageLoader.shared.image(for: review.avatarURL) ?? UIImage(named: "avatar")!
+
         let item = ReviewItem(
             reviewText: reviewText,
             created: created,
-            avatar: UIImage(named: "avatar") ?? UIImage(),
+            avatarURL: review.avatarURL,
             firstName: review.firstName,
             lastName: review.lastName,
             rating: review.rating,
