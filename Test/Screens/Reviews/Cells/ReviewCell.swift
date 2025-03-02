@@ -10,8 +10,11 @@ struct ReviewCellConfig {
     let id = UUID()
     /// Текст отзыва.
     let reviewText: NSAttributedString
-    /// Максимальное отображаемое количество строк текста. По умолчанию 3.
-    var maxLines = 3
+    
+    var isExpanded: Bool = false
+    var maxLines: Int {
+        return isExpanded ? 0 : 3
+    }
     /// Время создания отзыва.
     let created: NSAttributedString
     
@@ -88,6 +91,7 @@ final class ReviewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         guard let layout = config?.layout else { return }
+        
         reviewTextLabel.frame = layout.reviewTextLabelFrame
         createdLabel.frame = layout.createdLabelFrame
         showMoreButton.frame = layout.showMoreButtonFrame
@@ -96,6 +100,10 @@ final class ReviewCell: UITableViewCell {
         ratingImageView.frame = layout.ratingFrame
     }
     
+    @objc private func didTapShowMore() {
+        guard let config = config else { return }
+        config.onTapShowMore(config.id)
+    }
 }
 
 // MARK: - Private
@@ -112,6 +120,8 @@ private extension ReviewCell {
         ratingImageView.image = ratingRenderer.ratingImage(config.rating)
         
         showMoreButton.isHidden = !config.shouldShowShowMoreButton
+        showMoreButton.setAttributedTitle(ReviewCellConfig.showMoreText, for: .normal)
+        showMoreButton.sizeToFit()
     }
 }
 
@@ -132,6 +142,7 @@ private extension ReviewCell {
         reviewTextLabel.lineBreakMode = .byWordWrapping
         reviewTextLabel.font = .text
         reviewTextLabel.textColor = .label
+        reviewTextLabel.numberOfLines = 3
     }
     
     func setupCreatedLabel() {
@@ -146,6 +157,7 @@ private extension ReviewCell {
         showMoreButton.setAttributedTitle(Config.showMoreText, for: .normal)
         showMoreButton.titleLabel?.font = .showMore
         showMoreButton.setTitleColor(.showMore, for: .normal)
+        showMoreButton.addTarget(self, action: #selector(didTapShowMore), for: .touchUpInside)
     }
     
     func setupAvatarImageView() {
@@ -166,6 +178,7 @@ private extension ReviewCell {
         contentView.addSubview(ratingImageView)
     }
 }
+
 
 // MARK: - Layout
 
@@ -228,22 +241,25 @@ private final class ReviewCellLayout {
         
         // Рейтинг
         ratingFrame = CGRect(x: usernameFrame.minX, y: maxY, width: 80, height: 16)
-        maxY += ratingFrame.height
+        maxY += ratingFrame.height + ratingToTextSpacing
         
-        // Высчитываем высоту текста
-        let textHeight = calculateReviewTextHeight(config: config)
-        
-        if textHeight > 0 {
-            maxY += ratingToTextSpacing
-            reviewTextLabelFrame = CGRect(x: usernameFrame.minX, y: maxY, width: width - (usernameFrame.minX - insets.left), height: textHeight)
-            maxY += textHeight + reviewTextToCreatedSpacing
-        } else {
-            reviewTextLabelFrame = .zero
+        if !config.reviewText.isEmpty() {
+            // Высота текста с текущим ограничением по количеству строк.
+            let currentTextHeight = (config.reviewText.font()?.lineHeight ?? .zero) * CGFloat(config.maxLines)
+            // Максимально возможная высота текста, если бы ограничения не было.
+            let actualTextHeight = config.reviewText.boundingRect(width: width).size.height
+            
+            reviewTextLabelFrame = CGRect(
+                origin: CGPoint(x: avatarFrame.maxX + avatarToUsernameSpacing, y: maxY),
+                size: config.reviewText.boundingRect(width: width - (usernameFrame.minX - insets.left), height: currentTextHeight).size
+            )
+            
+            maxY = reviewTextLabelFrame.maxY + reviewTextToCreatedSpacing
         }
         
         // Кнопка "Показать полностью..."
         if config.shouldShowShowMoreButton {
-            showMoreButtonFrame = CGRect(x: usernameFrame.minX, y: maxY, width: 150, height: 30)
+            showMoreButtonFrame = CGRect(x: usernameFrame.minX, y: maxY, width: 170, height: 30)
             maxY += showMoreButtonFrame.height + showMoreToCreatedSpacing
         } else {
             showMoreButtonFrame = .zero
@@ -258,15 +274,11 @@ private final class ReviewCellLayout {
     func calculateReviewTextHeight(config: ReviewCellConfig) -> CGFloat {
         let width = UIScreen.main.bounds.width - 24
         let boundingSize = CGSize(width: width, height: CGFloat.greatestFiniteMagnitude)
-        
-        let textHeight = config.reviewText.boundingRect(with: boundingSize, options: .usesLineFragmentOrigin, context: nil).height
-        return textHeight
+        return config.reviewText.boundingRect(with: boundingSize, options: .usesLineFragmentOrigin, context: nil).height
     }
     
     func calculateTextHeightForLines(maxLines: Int) -> CGFloat {
-        let width = UIScreen.main.bounds.width - 24
-        let lineHeight: CGFloat = 20
-        return lineHeight * CGFloat(maxLines)
+        return 20 * CGFloat(maxLines)
     }
 }
 

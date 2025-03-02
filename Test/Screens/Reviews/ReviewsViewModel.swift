@@ -83,13 +83,13 @@ private extension ReviewsViewModel {
     /// Метод, вызываемый при нажатии на кнопку "Показать полностью...".
     /// Снимает ограничение на количество строк текста отзыва (раскрывает текст).
     func showMoreReview(with id: UUID) {
-        guard
-            let index = state.items.firstIndex(where: { ($0 as? ReviewItem)?.id == id }),
-            var item = state.items[index] as? ReviewItem
-        else { return }
-        item.maxLines = .zero
+        guard let index = state.items.firstIndex(where: { ($0 as? ReviewItem)?.id == id }) else { return }
+        
+        var item = state.items[index] as! ReviewItem
+        item.isExpanded.toggle() // Переключаем состояние
+        
         state.items[index] = item
-        onStateChange?(state)
+        onStateChange?(state) // Обновляем UI
     }
     
 }
